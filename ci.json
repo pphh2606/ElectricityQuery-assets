@@ -1,14 +1,14 @@
 {
   "app": {
     "version": "1.0",
-    "versionCode": 1594,
+    "versionCode": 1606,
     "extra": {
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 3594613
+      "packageSize": 3598406
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-ci.apk",
-    "note": "feat: 优化更新下载源、跳过版本与弹窗布局\n\n- 下载源列表会先检测连通性和延迟，并扩充为六个镜像\n- 新增跳过指定版本并持久化用户选择\n- 镜像地址统一收敛到 UpdateMirrorSources\n- 更新弹窗支持固定标题、滚动内容和底部操作栏\n- 调低弹窗默认模糊强度，更新多语言资源与 CHANGELOG\n- CI 更新说明链接改用 GitHub 官方地址\n- 将应用版本号更新到 1593"
+    "note": "fix: 修复重复更新检查并优化更新拉取流程\n\n- 自动更新检查仅执行一次，避免重组或 Activity 重建重复弹窗\n- “不再提示此版本”支持整行点击切换\n- 更新检查改为提前退出，首个有效镜像返回后取消其余请求\n- 更新请求改为 OkHttp 非阻塞回调并支持及时取消\n- 更新 CHANGELOG，并将应用版本号更新到 1605"
   }
 }
