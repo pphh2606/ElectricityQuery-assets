@@ -1,14 +1,14 @@
 {
   "app": {
     "version": "1.0",
-    "versionCode": 1606,
+    "versionCode": 1614,
     "extra": {
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 3598406
+      "packageSize": 3602134
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-ci.apk",
-    "note": "fix: 修复重复更新检查并优化更新拉取流程\n\n- 自动更新检查仅执行一次，避免重组或 Activity 重建重复弹窗\n- “不再提示此版本”支持整行点击切换\n- 更新检查改为提前退出，首个有效镜像返回后取消其余请求\n- 更新请求改为 OkHttp 非阻塞回调并支持及时取消\n- 更新 CHANGELOG，并将应用版本号更新到 1605"
+    "note": "feat: 优化主题色选择与更新下载探测\n\n- 主题色选择器升级为 HSV 滑杆与 HEX 输入，支持实时预览\n- 主要设置开关支持整行点击切换\n- 更新下载源与下载探测逻辑统一收敛\n- 更新日志按变更分组重写"
   }
 }
