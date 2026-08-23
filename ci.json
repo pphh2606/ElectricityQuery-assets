@@ -1,14 +1,14 @@
 {
   "app": {
     "version": "1.0",
-    "versionCode": 1675,
+    "versionCode": 1714,
     "extra": {
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 3640639
+      "packageSize": 3881260
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-ci.apk",
-    "note": "fix: 还原关于页联系方式弹窗与构建标识的误改\n\n联系方式点击后恢复关闭弹窗，构建信息恢复按构建来源显示 CI 标识。"
+    "note": "chore: 更新更新日志并精简界面加载逻辑\n\n- 新增公告下载链接转系统浏览器、全屏加载层\n- 修复公告内容溢出与 WebView 深色模式加载闪亮色\n- 夜间模式改用 AppCompatDelegate 管理，移除 recreate 重建机制\n- 移除充值、支付、收藏等按钮内加载转圈、仪表盘骨架屏与调试日志\n- 重新引入 appcompat 1.6.1 依赖并切换 DayNight 主题\n- 挂失警告文案去掉 ⚠ 表情符号"
   }
 }
