@@ -6,9 +6,9 @@
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 4950004
+      "packageSize": 4949999
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-ci.apk",
-    "note": "feat: 首页与大厅支持多语言，通知与留言界面统一优化\n\n新增功能\n1. 首页的应用名和分类名会跟随应用语言切换显示；新增 assets/i18n/home_apps_i18n.json，由 mergeHomeI18n 纯函数按 appId 与 categoryId 查表合并译文，缺译文时回退 JSON 中文原文\n2. 办事大厅的应用名和分类名同样支持多语言；因为登录后服务端数据会整体替换本地快照，HallI18n 改为在显示处按 ID 查表，而不是把译文合并进数据层\n3. 英文界面下用中文关键词也能搜到首页应用；HomeApp 与 HomeCategory 新增 originalName、originalCategoryName 保存本地化前的原文，搜索条件同时匹配译文、原文与服务端别名\n4. 切换语言后首页会静默刷新为新语言；HomeViewModel 新增 reloadForLanguageChange，以 LocalConfiguration 变化为信号比对语言键后重载，不显示下拉刷新指示器\n\nBug 修复\n1. 留言详情里较长的科室或姓名不再把右侧时间挤成竖排；信息行改为左侧 weight 1f 不限行、右侧时间单行加省略号，并按 Top 对齐\n2. 通知列表搜索时不再重复显示结果标题；统计行左侧改为显示搜索关键词与结果数，删除列表内重复的 search_header 条目\n\n界面与交互优化\n1. 通知列表标题栏只保留「通知公告」；标题改用 TopAppBar 默认 titleLarge 与其他页面统一，总数从标题下移到列表统计行\n2. 通知列表顶部统计行左侧改为「共 N 条通知」，不再显示「已加载 N 条」；由 ListStatsRow 的 loadedText 参数驱动，右侧页码保持不变\n3. 通知详情标题放大到与其他页面一致；去掉 titleMedium 改用 TopAppBar 默认 titleLarge，并加单行省略避免与右侧操作按钮挤压\n4. 留言列表改为与账单页一致的无阴影描边卡片；用 Card 搭配 1dp outlineVariant 描边与 16dp 圆角，条目间距 8dp，替换原来的分隔条样式\n5. 留言咨询区列表改为图标加名称的整行样式；44dp surfaceVariant 图标底板配 Forum 图标与右箭头，名称不限行完整显示，行间用 0.5dp 分割线\n\n架构改进\n1. 语言键解析收敛到一处，首页与大厅共用；AppLanguage.currentI18nKey 优先读取 SettingsPreferences 的选择，只在跟随系统时回退 Locale.getDefault，简体中文返回 null\n2. 首页数据缓存改为按语言键失效；HomeJsonLoader 同时缓存 categories 与 languageKey，语言不一致时重新解析并合并，避免切语言后拿到旧译文\n3. 列表统计行左侧文案可收缩，长文案不再挤掉页码；ListStatsRow 左侧加 weight 1f 与 fill false 以及单行省略，右侧固定单行并加 16dp 起始间距\n\n新增文件\n1. app/src/main/assets/i18n/home_apps_i18n.json：首页应用与分类的多语言映射表\n2. app/src/main/assets/i18n/hall_apps_i18n.json：办事大厅应用与分类的多语言映射表"
+    "note": "ci: Release 发布时由 Actions 构建并上传 APK\n\n1. 新增 publish-release job，在 Release 发布时检出 tag 对应的提交并构建 assembleRelease，再用 gh release upload 把 app-release.apk 挂到该 Release 的资产上\n2. 该 job 声明 contents write 权限，否则只读的 GITHUB_TOKEN 无法上传 Release 资产\n3. sync-stable 增加 needs publish-release，等 APK 上传完成后再同步 assets，避免 releases/latest 还没有资产时报 No APK asset found"
   }
 }
