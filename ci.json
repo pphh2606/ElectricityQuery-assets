@@ -1,14 +1,14 @@
 {
   "app": {
-    "version": "1.1",
-    "versionCode": 2245,
+    "version": "1.2",
+    "versionCode": 2246,
     "extra": {
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 4949999
+      "packageSize": 4949949
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-ci.apk",
-    "note": "ci: Release 发布时由 Actions 构建并上传 APK\n\n1. 新增 publish-release job，在 Release 发布时检出 tag 对应的提交并构建 assembleRelease，再用 gh release upload 把 app-release.apk 挂到该 Release 的资产上\n2. 该 job 声明 contents write 权限，否则只读的 GITHUB_TOKEN 无法上传 Release 资产\n3. sync-stable 增加 needs publish-release，等 APK 上传完成后再同步 assets，避免 releases/latest 还没有资产时报 No APK asset found"
+    "note": "release: 发布 1.2\n\n1. versionName 从 1.1 更新为 1.2，随后打 v1.2 tag 并发布 Release"
   }
 }
