@@ -1,14 +1,14 @@
 {
   "app": {
-    "version": "1.1",
-    "versionCode": 1944,
+    "version": "1.2",
+    "versionCode": 2245,
     "extra": {
       "target": 36,
       "min": 21,
       "compile": 36,
-      "packageSize": 4659320
+      "packageSize": 4949945
     },
     "link": "https://github.com/pphh2606/ElectricityQuery-assets/blob/main/app-release-stable.apk",
-    "note": "第一个正式版"
+    "note": "电费查询 1.2\n\n新增功能\n1. 原生教务模块上线，包含教务首页、更多服务、成绩查询、课表查询与全校课表查询，不再依赖网页跳转 [1c6444f](https://github.com/pphh2606/ElectricityQuery/commit/1c6444f) [6a8b686](https://github.com/pphh2606/ElectricityQuery/commit/6a8b686) [7eb8ca6](https://github.com/pphh2606/ElectricityQuery/commit/7eb8ca6) [45dea76](https://github.com/pphh2606/ElectricityQuery/commit/45dea76)\n2. 新增今日课表桌面小组件，课程按三行展示，在桌面直接查看当天课程 [336076e](https://github.com/pphh2606/ElectricityQuery/commit/336076e) [4dbf4f5](https://github.com/pphh2606/ElectricityQuery/commit/4dbf4f5)\n3. 账号管理新增手机绑定、邮箱绑定、高级设置入口，修改密码页新增忘记密码 [b6327b6](https://github.com/pphh2606/ElectricityQuery/commit/b6327b6)\n4. 网页唤起外部应用前先弹确认，手机上没装对应应用时保持静默 [b6327b6](https://github.com/pphh2606/ElectricityQuery/commit/b6327b6)\n5. 公告页支持整页搜索，输入关键词后整页切换为搜索结果 [6e9971c](https://github.com/pphh2606/ElectricityQuery/commit/6e9971c)\n6. 首页与办事大厅支持多语言，应用名和分类名跟随应用语言显示，英文界面下用中文关键词也能搜到应用 [8f2b3ee](https://github.com/pphh2606/ElectricityQuery/commit/8f2b3ee)\n7. 底部导航支持滚动隐藏，仅选中项显示文字 [4dbf4f5](https://github.com/pphh2606/ElectricityQuery/commit/4dbf4f5)\n\n重要修复\n1. 修改密码不再报解密失败或验证码错误，同一次流程复用同一个会话 [b6327b6](https://github.com/pphh2606/ElectricityQuery/commit/b6327b6)\n2. 切换账号时学号不再串写到旧账号 [1c6444f](https://github.com/pphh2606/ElectricityQuery/commit/1c6444f)\n3. 退出登录后不再显示已登录，重启也能正确恢复 [336076e](https://github.com/pphh2606/ElectricityQuery/commit/336076e)\n4. 教务接口返回空数据或网关 502 时不再崩溃或报解析错误 [336076e](https://github.com/pphh2606/ElectricityQuery/commit/336076e)\n5. 教务登录态偶尔失效时自动重试换票，不再直接要求重新登录 [7eb8ca6](https://github.com/pphh2606/ElectricityQuery/commit/7eb8ca6)\n6. 账单页切换标签后翻页不再卡住，后台标签补数据不再把列表拉走 [94f0c43](https://github.com/pphh2606/ElectricityQuery/commit/94f0c43)\n7. 通知详情不再重复请求、浏览量正常增长，退出再进入会刷新 [74e69d8](https://github.com/pphh2606/ElectricityQuery/commit/74e69d8)\n8. 内置浏览器旋转屏幕或改变窗口大小不再整页重新加载 [6e9971c](https://github.com/pphh2606/ElectricityQuery/commit/6e9971c)\n9. 从登录页返回教务首页不再反复闪烁、请求被刷爆 [336076e](https://github.com/pphh2606/ElectricityQuery/commit/336076e)\n10. 键盘不再遮挡银行卡绑定页按钮，同一用户名重复登录不再堆账号，公告详情正文链接不再撑坏布局，课表节次列与长星期名不再被裁 [b6327b6](https://github.com/pphh2606/ElectricityQuery/commit/b6327b6) [94f0c43](https://github.com/pphh2606/ElectricityQuery/commit/94f0c43) [74e69d8](https://github.com/pphh2606/ElectricityQuery/commit/74e69d8)"
   }
 }
